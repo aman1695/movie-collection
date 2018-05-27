@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h2>Add Actor</h2>
+        <form method="post" action="/actors/addActor" enctype="multipart/form-data">
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Name
+                        <input name="name" type="text"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>dob
+                        <input name="dob" type="Date"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="radio" id="male"
+                    name="sex" value="M">
+                    <label for="sex">Male</label>
+                    <input type="radio" id="female"
+                    name="sex" value="F">
+                    <label for="sex">Female</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Short Bio
+
+                        <textarea name="bio" rows="5" cols="20"></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Image
+                        <input type="file" id="file" name="file" multiple>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+
+                    <input type="submit" class="button" value="Submit"/>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

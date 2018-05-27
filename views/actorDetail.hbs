@@ -1,0 +1,41 @@
+
+
+<h2>Actor</h2>
+{{#if actor}}
+    <table >
+        <thead>
+        <tr>
+            <th width="200">Image</th>
+            <th width="200">Name</th>
+            <th width="150">dob</th>
+            <th width="50">sex</th>
+            <th width="500">bio</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><img src="{{actor.image}}"/></td>
+                <td>{{actor.name}}</td>
+                <td>{{actor.dob}}</td>
+                <td>{{actor.sex}}</td>
+                <td>{{actor.bio}}</td>
+                <!--<div>-->
+                <!--<input type="radio" id="male"-->
+                <!--name="sex" value="M">-->
+                <!--<label for="sex">Male</label>-->
+                <!--<input type="radio" id="female"-->
+                <!--name="sex" value="F">-->
+                <!--<label for="sex">Female</label>-->
+                <!--</div>-->
+                <!--<td><a href="/actors/{{actor.producer._id}}">{{actor.producer.name}}</a></td>-->
+                <td><a class="button" href="/actors/updateActor/{{actor._id}}">Edit</a></td>
+                <!--<td><a class="button alert removeBook" data-id="{{actor._id}}" href="/actors/deleteActor/{{this._id}}">Delete</a></td>-->
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+{{/if}}

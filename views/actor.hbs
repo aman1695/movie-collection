@@ -1,0 +1,96 @@
+<!--<h1>{{title}}</h1>-->
+
+<!--<table class="table table-striped">-->
+    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th>Image</th>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th>Mark</th>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th>Subject</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
+    <!--<tbody>-->
+    <!--{{#each actors}}-->
+        <!--<tr>-->
+            <!--<td>{{ this.image }}</td>-->
+            <!--<td>{{ this.name }}</td>-->
+            <!--<td>{{ this.sex }}</td>-->
+            <!--<td>{{ this.dob }}</td>-->
+            <!--<td>{{ this.bio }}</td>-->
+        <!--</tr>-->
+    <!--{{/each}}-->
+    <!--</tbody>-->
+<!--</table>-->
+
+
+<!--<form action="/actors/addActor" method="post" enctype="multipart/form-data">-->
+    <!--<div>-->
+        <!--<label for="name">Name:</label>-->
+        <!--<input type="text" id="name" name="name">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<input type="radio" id="male"-->
+               <!--name="sex" value="M">-->
+        <!--<label for="sex">Male</label>-->
+        <!--<input type="radio" id="female"-->
+               <!--name="sex" value="F">-->
+        <!--<label for="sex">Female</label>-->
+    <!--</div>-->
+
+    <!--<div>-->
+        <!--<label for="date">Date Of Birth</label>-->
+        <!--<input id="date" type="date" name="dob">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<label for="bio">Bio:</label>-->
+        <!--<textarea name="bio" rows="10" cols="50">Short Bio</textarea>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<label for="file">Profile Pic: </label>-->
+        <!--<input type="file" id="file" name="file" multiple>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<input type="Submit" value="Add">-->
+    <!--</div>-->
+
+<!--</form>-->
+
+<h2>Actors</h2>
+<p><a href="/actors/addActor">Add Actor</a></p>
+{{#if actors}}
+    <table >
+        <thead>
+        <tr>
+            <th width="300">Image</th>
+            <th width="200">Name</th>
+            <th width="150">dob</th>
+            <th width="50">sex</th>
+            <th width="500">bio</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each actors}}
+            <tr>
+                <td><img src="{{this.image}}"/></td>
+                <td>{{this.name}}</td>
+                <td>{{this.dob}}</td>
+                <td>{{this.sex}}</td>
+                <td>{{this.bio}}</td>
+                <!--<div>-->
+                <!--<input type="radio" id="male"-->
+                <!--name="sex" value="M">-->
+                <!--<label for="sex">Male</label>-->
+                <!--<input type="radio" id="female"-->
+                <!--name="sex" value="F">-->
+                <!--<label for="sex">Female</label>-->
+                <!--</div>-->
+                <!--<td><a href="/actors/{{this.producer._id}}">{{this.producer.name}}</a></td>-->
+                <td><a class="button" href="/actors/updateActor/{{this._id}}">Edit</a></td>
+                <!--<td><a class="button alert removeBook" data-id="{{this._id}}" href="/actors/deleteActor/{{this._id}}">Delete</a></td>-->
+            </tr>
+        {{/each}}
+
+
+
+        </tbody>
+    </table>
+{{/if}}

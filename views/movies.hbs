@@ -1,0 +1,101 @@
+<!--<h1>{{title}}</h1>-->
+
+<!--<table class="table table-striped">-->
+    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Image</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Mark</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Subject</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
+    <!--<tbody>-->
+    <!--{{#each movies}}-->
+        <!--<tr>-->
+            <!--<td>{{ this.image }}</td>-->
+            <!--<td>{{ this.name }}</td>-->
+            <!--<td>{{ this.cast }}</td>-->
+            <!--<td>{{ this.producer }}</td>-->
+            <!--<td>{{ this.release_date }}</td>-->
+        <!--</tr>-->
+    <!--{{/each}}-->
+    <!--</tbody>-->
+<!--</table>-->
+
+<!--<form action="/movies/addMovie" method="post" enctype="multipart/form-data">-->
+    <!--<div>-->
+        <!--<label for="movietitle">Movie Title:</label>-->
+        <!--<input type="text" id="name" name="name">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<label for="date">Releasing Date</label>-->
+        <!--<input id="date" type="date" name="releasingdate">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<label for="bio">Pot:</label>-->
+        <!--<textarea name="bio" rows="10" cols="50">pot</textarea>-->
+    <!--</div>-->
+
+
+    <!--<div>-->
+        <!--<label for="cast">Cast:</label>-->
+        <!--<select name="cast" size="10" multiple>-->
+            <!--{{#each actors}}-->
+                <!--<option value={{this._id}}>{{this.name}}</option>-->
+            <!--{{/each}}-->
+        <!--</select>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<label for="producer">Producer:</label>-->
+        <!--<select name="producer">-->
+            <!--{{#each producers}}-->
+                <!--<option value={{this._id}}>{{this.name}}</option>-->
+            <!--{{/each}}-->
+        <!--</select>-->
+    <!--</div>-->
+
+
+    <!--<div>-->
+        <!--<label for="file">Profile Pic: </label>-->
+        <!--<input type="file" id="file" name="file" multiple>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<input type="Submit" value="Add">-->
+    <!--</div>-->
+
+<!--</form>-->
+
+<p><a href="/addMovie">Add Movie</a></p>
+{{#if movies}}
+<table >
+    <thead>
+    <tr>
+        <th width="300">Poster</th>
+        <th width="200">Name</th>
+        <th width="150">Year Of Release</th>
+        <th width="500">Plot</th>
+        <th width="200">Cast</th>
+        <th width="100">Producer</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each movies}}
+    <tr>
+        <td><img src="{{this.image}}"/></td>
+        <td>{{this.name}}</td>
+        <td>{{this.release_date}}</td>
+        <td>{{this.plot}}</td>
+        <td>{{#each this.cast}}
+            <a href="/actors/actor/{{this._id}}">{{this.name}}</a> <br>
+            {{/each}}
+        </td>
+        <td><a href="/producers/producer/{{this.producer._id}}">{{this.producer.name}}</a></td>
+        <td><a class="button" href="/updateMovie/{{this._id}}">Edit</a></td>
+        <td><a class="button alert removeBook" data-id="{{this._id}}" href="/deleteMovie/{{this._id}}">Delete</a></td>
+    </tr>
+    {{/each}}
+
+
+
+    </tbody>
+</table>
+{{/if}}

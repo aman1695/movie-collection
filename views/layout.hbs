@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>{{title}}</title>
+
+
+    <link rel="stylesheet" href="/stylesheets/foundation.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<div class="row">
+    <div class="large-12 columns">
+        <h1>Movie Database</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+            <section class="top-bar-section">
+                <ul class="dropdown menu">
+                    <li><a href="/">Movies</a></li>
+                    <li><a href="/actors">Actors</a></li>
+                    <li><a href="/producers">Producers</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        {{{body}}}
+    </div>
+</div>
+
+<footer>
+    <div class="row">
+        <div class="large-12 columns">
+            <!--<p>TekBook &copy; 2015 | <a href="/manage">Manage</a></p>-->
+        </div>
+    </div>
+</footer>
+
+
+<!--<script data-main="/js/app" src="/components/requirejs/require.js"></script>-->
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/foundation.js"></script>
+<!--<script src="/js/main.js"></script>-->
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

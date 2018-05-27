@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h2>Update Actor</h2>
+        <form method="post" action="/actors/updateActor/{{id}}" enctype="multipart/form-data">
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Name
+                        <input name="name" type="text" value="{{name}}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>dob
+                        <input name="dob" type="Date" value="{{dob}}"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                        {{#ifEquals sex "M"}}
+                            <input type="radio" id="male"
+                                   name="sex" value="M" checked>
+                            <label for="sex">Male</label>
+                            <input type="radio" id="female"
+                                   name="sex" value="F">
+                            <label for="sex">Female</label>
+                        {{/ifEquals}}
+                        {{#ifEquals sex "F"}}
+                            <input type="radio" id="male"
+                                   name="sex" value="M">
+                            <label for="sex">Male</label>
+                            <input type="radio" id="female"
+                                   name="sex" value="F" checked>
+                            <label for="sex">Female</label>
+                        {{/ifEquals}}
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Short Bio
+
+                        <textarea name="bio" rows="5" cols="20">{{bio}}</textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Image
+                        <input type="file" id="file" name="file" multiple>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+
+                    <input type="submit" class="button" value="Submit"/>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

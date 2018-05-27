@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h2>Add Movies</h2>
+        <form method="post" action="/addMovie" enctype="multipart/form-data">
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Name
+                        <input name="name" type="text"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Releasing Date
+                        <input name="release_date" type="Date"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>plot
+                        <textarea name="plot" rows="5" cols="20"></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Cast
+                        <select name="cast" size="10" multiple>
+                        {{#each actors}}
+                            <option value={{this._id}}>{{this.name}}</option>
+                        {{/each}}
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>producer
+                        <select name="producer">
+                                {{#each producers}}
+                                <option value={{this._id}}>{{this.name}}</option>
+                                {{/each}}
+                            </select>
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Cover URL
+                        <input type="file" id="file" name="file" multiple>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+
+                    <input type="submit" class="button" value="Submit"/>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
